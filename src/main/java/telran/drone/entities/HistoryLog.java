@@ -1,10 +1,7 @@
 package telran.drone.entities;
-import java.time.LocalDate;
-
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Entity
 @Table(name = "history_log")
@@ -12,11 +9,11 @@ import lombok.Setter;
 public class HistoryLog {
 	@Id	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-	@Column(name = "buttery_level", nullable = false)
+	@Column(name = "battery_level", nullable = false)
 	int butteryPercent;
 
 	@ManyToOne
-	@Column(name = "drone", nullable = false)
+	@Column(name = "drones", nullable = false)
 	Drone drone;
 
 	@ManyToOne
